@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>登陆</title>
+	<link rel="stylesheet" href="assets/libs/particles/css/style.css">
+	<link rel="stylesheet" href="assets/css/base.css">
+	<link rel="stylesheet" href="assets/css/login.css" />
+
+    <!--ie-->
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+	<!-- particles.js container -->
+	<div id="particles-js"></div>
+	<div id="wrapper">
+		<div>
+
+			<span style="font-size: 40px;font-style: revert;color:#0f88eb" >电子家族谱</span>
+			<h2 style="margin-top: 10px">电子族谱拉近您与家人的距离！</h2>
+
+		</div>
+		<nav class="switch_nav">
+			<a href="register.html" id="switch_signup" class="switch_btn">注册</a>
+			<a href="javascript:;" id="switch_login" class="switch_btn on">登陆</a>
+			<div class="switch_bottom" id="switch_bottom"></div>
+		</nav>
+		<div id="login">
+			<div id="errorMsg" style="color: red"></div>
+			<form method="post" action="" id="loginForm" accept-charset="utf-8">
+				<ul class="group_input">
+					<li>
+						<input type="text" class="mobile required" id="mobile" placeholder="请输入手机号" name="phone" />
+					</li>
+					<li>
+						<input type="password" class="psd required" id="psd" placeholder="请输入密码" name="upassword"/>
+					</li>
+				</ul>
+				<button type="button" class="submit_btn" id="btnSubmit">登陆</button>
+			</form>
+		</div>
+	</div>
+	<!--<script src="assets/libs/jquery-1.12.4/jquery.min.js"></script>-->
+    <script src="js/jquery-3.3.1.js"></script>
+	<script src="assets/libs/particles/particles.min.js"></script>
+	<script src="assets/libs/particles/js/app.js"></script>
+	<!-- <script src="../assets/libs/particles/js/lib/stats.js"></script> -->
+	<script>
+		$(function () {
+			//点击按钮提交表单
+			$("#btnSubmit").click(function () {
+				$.post("user/LoginServlet",$("#loginForm").serialize(),function (message) {
+                    // alert(data);
+					//返回true登录成功
+					if (message.flag){
+					    location.href="index.html";
+					} else {
+                        //返回false登录失败
+                        $("#errorMsg").html(message.errorMsg);
+					}
+
+                });
+            });
+        });
+	</script>
+
+</body>
+</html>

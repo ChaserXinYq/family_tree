@@ -1,0 +1,18 @@
+.page-header {
+    margin: 0px;
+}
+
+.helpMsg {
+    font-family: 'Adobe 仿宋 Std R';
+    color: #c12e2a;
+}
+
+.footer {
+    height: 300px;
+    width: 100%;
+}
+
+.thumbnail {
+    height: 300px;
+    width: 440px;
+}

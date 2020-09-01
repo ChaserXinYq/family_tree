@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>获取fid</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/getFamilyTree.css" rel="stylesheet">
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        //当加载页面的时候就去请求服务器获取familyId
+        $(function () {
+            //当加载页面时就发送ajax请求
+            $.post("fid/findFid",{},function (data) {
+                $("#familyId").html(data.fid);
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="page-header">
+    <img src="img/background.png" width="100%">
+</div>
+
+<div class="jumbotron">
+    <h1 style="text-align: center">您的familyId为：</h1>
+    <p style="text-align: center" id="familyId">123123123</p>
+    <h3 style="text-align:center">请妥善保存！</h3>
+    <p style="text-align: center"><a class="btn btn-primary btn-lg" href="index.html" role="button">返回首页</a></p>
+</div>
+
+<div>
+    <h4 class="helpMsg">帮帮他们</h4>
+    <hr/>
+</div>
+<div class="footer">
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <div class="caption">
+                <img src="img/help01.png"width="240px" height="120px">
+                <h3>老人深夜求救</h3>
+                <p>2月5日凌晨1点34分，微博用户@老苏8811发出一条消息：你好。这条微博获得近九千条评论和三万多次转发</p>
+                <p><a href="#" class="btn btn-primary" role="button">帮助他</a> <a href="#" class="btn btn-default" role="button">查看详情</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="thumbnail" >
+            <div class="caption">
+                <img src="img/help01.png"width="240px" height="120px">
+                <h3>老人深夜求救</h3>
+                <p>2月5日凌晨1点34分，微博用户@老苏8811发出一条消息：你好。这条微博获得近九千条评论和三万多次转发</p>
+                <p><a href="#" class="btn btn-primary" role="button">帮助他</a> <a href="#" class="btn btn-default" role="button">查看详情</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <div class="caption">
+                <img src="img/help01.png"width="240px" height="120px">
+                <h3>老人深夜求救</h3>
+                <p>2月5日凌晨1点34分，微博用户@老苏8811发出一条消息：你好。这条微博获得近九千条评论和三万多次转发</p>
+                <p><a href="#" class="btn btn-primary" role="button">帮助他</a> <a href="#" class="btn btn-default" role="button">查看详情</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <div class="caption">
+                <img src="img/help01.png"width="240px" height="120px">
+                <h3>老人深夜求救</h3>
+                <p>2月5日凌晨1点34分，微博用户@老苏8811发出一条消息：你好。这条微博获得近九千条评论和三万多次转发</p>
+                <p><a href="#" class="btn btn-primary" role="button">帮助他</a> <a href="#" class="btn btn-default" role="button">查看详情</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

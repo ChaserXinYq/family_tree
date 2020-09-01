@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>修谱</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/CreateFamilyTree.css" rel="stylesheet">
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+        $(function () {
+            $.post("detail/findAllDetail", {}, function (list) {
+                //list[{},{},{}]
+                for (var i = 0; i < list.length; i++) {
+                    if (list[i]["nodeId"] === 1) {
+                        $("#img1").attr("src", list[i]["headImgUrl"]);
+                        $("#name1").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 2) {
+                        $("#img2").attr("src", list[i]["headImgUrl"]);
+                        $("#name2").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 3) {
+                        $("#img3").attr("src", list[i]["headImgUrl"]);
+                        $("#name3").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 4) {
+                        $("#img4").attr("src", list[i]["headImgUrl"]);
+                        $("#name4").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 5) {
+                        $("#img5").attr("src", list[i]["headImgUrl"]);
+                        $("#name5").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 6) {
+                        $("#img6").attr("src", list[i]["headImgUrl"]);
+                        $("#name6").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 7) {
+                        $("#img7").attr("src", list[i]["headImgUrl"]);
+                        $("#name7").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 8) {
+                        $("#img8").attr("src", list[i]["headImgUrl"]);
+                        $("#name8").html(list[i]["name"]);
+                    }
+                    if (list[i]["nodeId"] === 9) {
+                        $("#img9").attr("src", list[i]["headImgUrl"]);
+                        $("#name9").html(list[i]["name"]);
+
+                        //获取昵称的请求
+                        $.post("relative/finNodeId", {}, function (node) {
+                            //node:{node1:"",node2:""}
+                            if (node["node1"] != null) {
+                                $("#name1").html(node["node1"]);
+                            }
+                            if (node["node2"] != null) {
+                                $("#name2").html(node["node2"]);
+                            }
+                            if (node["node3"] != null) {
+                                $("#name3").html(node["node3"]);
+                            }
+                            if (node["node4"] != null) {
+                                $("#name4").html(node["node4"]);
+                            }
+                            if (node["node5"] != null) {
+                                $("#name5").html(node["node5"]);
+                            }
+                            if (node["node6"] != null) {
+                                $("#name6").html(node["node6"]);
+                            }
+                            if (node["node7"] != null) {
+                                $("#name7").html(node["node7"]);
+                            }
+                            if (node["node8"] != null) {
+                                $("#name8").html(node["node8"]);
+                            }
+                            if (node["node9"] != null) {
+                                $("#name9").html(node["node9"]);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+
+        function detail(nodeId) {
+            location.href = "http://localhost/familyTree/detail.html?nodeId=" + nodeId + "";
+        }
+    </script>
+</head>
+<body>
+
+<div class="nodes">
+    <div class="node" id="node1" onclick="javascript:detail(1)">
+        <img id="img1" src="#" class="round_icon">
+        <p id="name1">你好</p>
+    </div>
+    <div class="node" id="node2" onclick="javascript:detail(2)">
+        <img id="img2" src="#" class="round_icon">
+        <p id="name2">你好</p>
+    </div>
+    <div class="node" id="node3" onclick="javascript:detail(3)">
+        <img id="img3" src="#" class="round_icon">
+        <p id="name3">你好</p>
+    </div>
+    <div class="node" id="node4" onclick="javascript:detail(4)">
+        <img id="img4" src="#" class="round_icon">
+        <p id="name4">你好</p>
+    </div>
+    <div class="node" id="node5" onclick="javascript:detail(5)">
+        <img id="img5" src="#" class="round_icon">
+        <p id="name5">你好</p>
+    </div>
+    <div class="node" id="node6" onclick="javascript:detail(6)">
+        <img id="img6" src="#" class="round_icon">
+        <p id="name6">你好</p>
+    </div>
+    <div class="node" id="node7" onclick="javascript:detail(7)">
+        <img id="img7" src="#" class="round_icon">
+        <p id="name7">你好</p>
+    </div>
+    <div class="node" id="node8" onclick="javascript:detail(8)">
+        <img id="img8" src="#" class="round_icon">
+        <p id="name8">你好</p>
+    </div>
+    <div class="node" id="node9" onclick="javascript:detail(9)">
+        <img id="img9" src="#" class="round_icon">
+        <p id="name9">你好</p>
+    </div>
+</div>
+</body>
+</html>

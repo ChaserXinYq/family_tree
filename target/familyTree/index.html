@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>family</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<script>
+    $(function () {
+        $("#create_family").click(function () {
+            location.href = "fid/createFid";
+        });
+        $("#change_family").click(function () {
+            location.href = "detail/ifLogin";
+        });
+        $("#check_family").click(function () {
+            location.href = "inputFid.html";
+        })
+    });
+</script>
+
+<body background="img/timg.jpg">
+
+<div class="header_wrap">
+
+</div>
+<div class="body"style="height: 100%">
+    <div class="body_family">
+        <ul class="family">
+            <li style="margin-top: 750px" class="create_family btn btn-info btn-lg" id="create_family"><a class="create" href="javascript:void(0)">创建家谱</a></li>
+            <li style="margin-top: 750px" class="change_family btn btn-info btn-lg" id="change_family"><a class="change" href="javascript:void(0)">修缮家谱</a></li>
+            <li style="margin-top: 750px" class="check_family btn btn-info btn-lg" id="check_family"><a class="check" href="javascript:void(0)">查看家谱</a></li>
+            <li class="login_family btn btn-default btn-lg" id="login_family"><a class="login_a" href="login.html">登录</a></li>
+            <li class="exit_family btn btn-default btn-lg" id="exit_family"><a class="exit_a" href="login.html">退出</a></li>
+
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

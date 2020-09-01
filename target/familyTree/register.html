@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="assets/libs/particles/css/style.css">
+    <link rel="stylesheet" href="assets/libs/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+
+</head>
+<body>
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<div id="wrapper">
+    <div>
+        <span style="font-size: 40px;font-style: revert;color:#0f88eb">电子家族谱</span>
+        <h2 style="margin-top: 10px">电子族谱拉近您与家人的距离！</h2>
+        <div id="msg" style="color: red"></div>
+    </div>
+    <nav class="switch_nav">
+        <a href="javascript:;" id="switch_signup" class="switch_btn on">注册</a>
+        <a href="login.html" id="switch_login" class="switch_btn">登陆</a>
+        <div class="switch_bottom" id="switch_bottom"></div>
+    </nav>
+    <form method="post" action="" id="register_form">
+        <ul class="group_input">
+            <li>
+                <input type="text" placeholder="您的真实姓名" class="name required" id="name" name="uname"/>
+            </li>
+            <li >
+                <input type="text" placeholder="手机号(11位手机号码)" class="mobile required" id="mobile" name="phone"/>
+            </li>
+            <li>
+                <input type="password" placeholder="密码(不少于6位)" class="psd required" id="psd" name="upassword"/>
+            </li>
+        </ul>
+        <input type="submit" class="submit_btn" id="btnSubmit" value="注册">
+        <!-- <span class="agreement-tip">点击「注册」按钮，即代表你同意<a href="javascript:;">《知乎协议》</a></span> -->
+    </form>
+
+</div>
+
+</div>
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+<script src="assets/libs/particles/particles.min.js"></script>
+<script src="assets/libs/particles/js/app.js"></script>
+
+<script>
+    function checkPassword(){
+        //获取password
+        var password = $("#psd").val();
+        var reg_password=/^\w{6,20}$/;
+        var flag = reg_password.test(password);
+
+        if (flag){
+            $("#psd").css("border","");
+        }else {
+            $("#psd").css("border","1px solid red");
+        }
+        return flag;
+    };
+
+    function checkUsername(){
+        //获取password
+        var name = $("#name").val();
+        var reg_name=/^[\u4E00-\u9FA5]{2,4}$/;
+        var flag = reg_name.test(name);
+
+        if (flag){
+            $("#name").css("border","");
+        }else {
+            $("#name").css("border","1px solid red");
+        }
+        return flag;
+    };
+
+    function checkPhone(){
+        var phone = $("#mobile").val();
+        var reg_phone=/^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
+        var flag = reg_phone.test(phone);
+
+        if (flag){
+            $("#mobile").css("border","");
+        }else {
+            $("#mobile").css("border","1px solid red");
+        }
+        return flag;
+    }
+
+
+   $(function () {
+       //当提交表单时，调用所有的校验方法
+       $("#register_form").submit(function () {
+           //校验信息
+           if (checkPassword()&&checkPhone()&&checkUsername()){
+               //校验通过，提交表单
+               $.post("user/addUserServlet",$(this).serialize(),function (data) {
+                   if (data.flag){
+                       //注册成功
+                       location.href="login.html";
+                   } else {
+                       //注册失败
+                       $("#msg").html(data.errorMsg);
+                   }
+
+               });
+           }
+           return false;
+       });
+       $("#mobile").blur(checkPhone);
+       $("#psd").blur(checkPassword);
+       $("#name").blur(checkUsername);
+
+   });
+</script>
+</body>
+</html>

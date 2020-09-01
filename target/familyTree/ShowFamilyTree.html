@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>展示族谱</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/CreateFamilyTree.css" rel="stylesheet">
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/getParameter.js"></script>
+    <script>
+        $(function () {
+            var fid = getParameter("fid");
+            //访问familyTree返回list集合
+            $.post("detail/findAllByInputFid",{fid:fid},function (data) {
+
+                var lis="";
+                for (var i = 0; i <data.length ; i++) {
+                    var node = '<div class="node" id="node'+(i+1)+'">';
+                    var img='<img src="'+data[i].headImgUrl+'" class="round_icon">';
+                    var name = '<p class="name">'+data[i].name+'</p>';
+                    var end='</div>';
+                    lis+=node;
+                    lis+=img;
+                    lis+=name;
+                    lis+=end;
+                }
+                $("#showFamilyTree").html(lis)
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="nodes" id="showFamilyTree">
+    <div class="node" id="node1">
+    <img src="#" class="round_icon">
+    <p class="name">你好</p>
+    </div>
+    <div class="node" id="node2">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node3">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node4">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node5">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node6">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node7">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node8">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+    <div class="node" id="node9">
+    <img src="#" class="round_icon">
+    <p>你好</p>
+    </div>
+
+</div>
+</body>
+</html>

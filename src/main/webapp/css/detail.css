@@ -1,0 +1,47 @@
+.round_icon{
+    width: 160px;
+    height: 154px;
+    display: flex;
+    border-radius: 10%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: pink;
+    float: left;
+}
+
+.inputMsg input{
+    width: 300px;
+    height: 50px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+.textInput textarea{
+    width: 470px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+
+.inputFromBig form{
+    margin-left: 38%;
+}
+
+.submit_input{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10%;
+    background-color: #0f88eb;
+    margin-left: 12%;
+}
+
+#headImg{
+    width:160px ;
+    height:190px;
+
+}
+.upload{
+    height: 30px;
+    width:160px;
+}

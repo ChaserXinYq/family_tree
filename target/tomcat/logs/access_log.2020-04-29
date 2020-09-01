@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:16 +0800] "GET /familyTree HTTP/1.1" 302 - http-bio-80-exec-2 0
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:16 +0800] "GET /familyTree/ HTTP/1.1" 304 - http-bio-80-exec-3 26
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:17 +0800] "GET /familyTree/css/common.css HTTP/1.1" 304 - http-bio-80-exec-1 229
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:17 +0800] "GET /familyTree/css/index.css HTTP/1.1" 304 - http-bio-80-exec-4 237
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:17 +0800] "GET /familyTree/img/timg.jpg HTTP/1.1" 304 - http-bio-80-exec-6 675
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:17 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-80-exec-7 0
+0:0:0:0:0:0:0:1 - - [29/Apr/2020:21:49:19 +0800] "GET /familyTree/inputFid.html HTTP/1.1" 304 - http-bio-80-exec-8 39

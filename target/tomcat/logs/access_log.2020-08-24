@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/ HTTP/1.1" 200 2256 http-bio-8080-exec-3 50
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/css/index.css HTTP/1.1" 200 920 http-bio-8080-exec-4 40
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/css/common.css HTTP/1.1" 200 4812 http-bio-8080-exec-1 58
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/css/bootstrap.min.css HTTP/1.1" 200 121070 http-bio-8080-exec-5 50
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/js/bootstrap.min.js HTTP/1.1" 200 37045 http-bio-8080-exec-6 105
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/js/jquery-3.3.1.js HTTP/1.1" 200 282115 http-bio-8080-exec-7 145
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:25 +0800] "GET /familyTree/img/timg.jpg HTTP/1.1" 200 305407 http-bio-8080-exec-3 39
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:26 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [24/Aug/2020:16:43:32 +0800] "GET /familyTree/css/bootstrap.min.css.map HTTP/1.1" 404 1023 http-bio-8080-exec-3 3

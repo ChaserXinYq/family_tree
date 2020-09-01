@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>查询fid</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>获取fid</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/queryFamilyId.css"rel="stylesheet">
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            //获取familyId
+            $("#btn_find").click(function () {
+                $.post("fid/findFid",{},function (data) {
+                    $("#familyId").html("您的familyId为："+data.fid);
+                })
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+<div class="page-header" style="margin: 0px">
+    <img src="img/background.png" width="100%">
+</div>
+
+<div class="jumbotron">
+    <h1 class="familyIdMsg">点击查询您的familyId</h1>
+    <div id="familyId"></div>
+    <button type="button" id="btn_find">查询</button>
+</div>
+
+<div class="list-group">
+    <a href="#" class="list-group-item disabled">
+       热点信息展示
+    </a>
+    <a href="#" class="list-group-item">【热点】何氏祠堂上梁趣揽</a>
+    <a href="#" class="list-group-item">【泪目】九旬老兵内地寻亲</a>
+    <a href="#" class="list-group-item">【求助】孩子：我想活着</a>
+    <a href="#" class="list-group-item">【求助】孩子：我想上学</a>
+    <a href="#" class="list-group-item">【家风】优良的家风有利于孩子的成长</a>
+    <a href="#" class="list-group-item">【家训】志存高远，责任为先</a>
+    <a href="#" class="list-group-item">【功德】何氏宗亲功德榜</a>
+    <a href="#" class="list-group-item">【功德】何氏宗亲功互助</a>
+</div>
+</body>
+</html>
+</body>
+</html>
